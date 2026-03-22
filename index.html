@@ -4,14 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obscurative Events</title>
+
+  <!-- Favicon / Logo -->
+  <link rel="icon" href="https://cdn.discordapp.com/icons/1287998374888603690/fdb5e705ffdaf81bbe01fddfa2c3484d.webp?size=80&quality=lossless" type="image/webp">
+
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1287998374888603690/fdb5e705ffdaf81bbe01fddfa2c3484d.png">
 </head>
 <body>
 
   <!-- Sticky Header -->
   <header>
-    <h1>Obscurative Events</h1>
+    <div class="logo-container">
+      <h1>Obscurative Events</h1>
+    </div>
+
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -22,8 +28,9 @@
     </nav>
   </header>
 
-  <!-- Sections Wrapper -->
+  <!-- Sections -->
   <main class="sections-container">
+
     <!-- Hero Section -->
     <section id="home" class="snap-section hero">
       <h2>Welcome to Obscurative Events</h2>
@@ -37,69 +44,57 @@
 
     <!-- About Section -->
     <section id="about" class="snap-section about">
-    <h2>About Us</h2>
-    <p>Obscurative Events is a community for gaming and creative events, partnered with Folium Hosting.</p>
+      <h2>About Us</h2>
+      <p>Obscurative Events is a community for gaming and creative events, partnered with Folium Hosting.</p>
 
-    <!-- Infinite Scrolling Images -->
-    <div class="auto-scroll-wrapper">
+      <div class="auto-scroll-wrapper">
         <div class="auto-scroll-track" id="about-images"></div>
-    </div>
+      </div>
     </section>
 
     <!-- Events Section -->
     <section id="events" class="snap-section events">
-    <h2>Upcoming Events</h2>
-    <div id="event-list" class="event-cards"></div>
+      <h2>Upcoming Events</h2>
+      <div id="event-list" class="event-cards"></div>
 
-    <!-- Infinite Scrolling Event Images -->
-    <div class="auto-scroll-wrapper">
+      <div class="auto-scroll-wrapper">
         <div class="auto-scroll-track" id="event-images"></div>
-    </div>
+      </div>
     </section>
 
     <!-- Community Section -->
     <section id="community" class="snap-section community">
-        <h2 class="section-title">Our Community</h2>
-        <p class="section-text">Join 2k+ members in our Discord server!</p>
-
-        <div class="discord-container">
-            <iframe 
-            src="https://discord.com/widget?id=1287998374888603690&theme=dark"
-            allowtransparency="true"
-            frameborder="0"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-            </iframe>
-        </div>
+      <h2>Our Community</h2>
+      <p>Join 2k+ members in our Discord server!</p>
+      <div class="discord-container">
+        <iframe 
+          src="https://discord.com/widget?id=1287998374888603690&theme=dark"
+          allowtransparency="true"
+          frameborder="0"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+        </iframe>
+      </div>
     </section>
 
     <!-- Social Media Section -->
     <section id="social" class="snap-section social">
-        <h2 class="section-title">Social Media</h2>
-        <p class="section-text">Check out our latest content on YouTube and TikTok!</p>
+      <h2>Social Media</h2>
+      <p>Check out our latest content on YouTube and TikTok!</p>
 
-        <div class="social-widgets">
-            <!-- TikTok embed -->
-            <div class="tiktok-container">
-            <iframe 
-                src="https://www.tiktok.com/embed/@obscurative_x" 
-                title="TikTok content" 
-                frameborder="0" 
-                allowfullscreen>
-            </iframe>
-            </div>
-
-            <!-- YouTube Card -->
-            <a href="https://www.youtube.com/channel/UCNaMbiwy9xqCfJAew0mbMqA" 
-            target="_blank" 
-            class="youtube-card">
-            <div class="yt-content">
-                <h3>Obscurative</h3>
-                <p>@Obscurative</p>
-                <p>6.98K subscribers • 59 videos</p>
-                <span class="yt-button">Watch on YouTube</span>
-            </div>
-            </a>
+      <div class="social-widgets">
+        <div class="tiktok-container">
+          <iframe src="https://www.tiktok.com/embed/@obscurative_x" title="TikTok content" frameborder="0" allowfullscreen></iframe>
         </div>
+
+        <a href="https://www.youtube.com/channel/UCNaMbiwy9xqCfJAew0mbMqA" target="_blank" class="youtube-card">
+          <div class="yt-content">
+            <h3>Obscurative</h3>
+            <p>@Obscurative</p>
+            <p>6.98K subscribers • 59 videos</p>
+            <span class="yt-button">Watch on YouTube</span>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- Partners Section -->
@@ -109,11 +104,12 @@
         <img src="https://foliumhosting.net/images/logo-with-text.webp" alt="Folium Hosting Logo" class="partner-logo">
       </a>
     </section>
+
   </main>
 
   <!-- Sticky Footer -->
   <footer>
-    <p>&copy; 2026 Obscurative Events &ndash; Still a work in progress, so some features may not be fully functional yet!</p>
+    <p>&copy; 2026 Obscurative Events</p>
   </footer>
 
   <script src="code.js"></script>
