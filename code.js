@@ -31,8 +31,8 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 // Images for scrolling strips
-const aboutImages = ["Image1.png","Image2.png","Image3.png"];
-const eventImages = ["Event1.png","Event2.png","Event3.png"];
+const aboutImages = ["image1.png","image2.png","image3.png"];
+const eventImages = ["event1.png","event2.png","event3.png"];
 
 function setupInfiniteScroll(containerId, images) {
   const container = document.getElementById(containerId);
