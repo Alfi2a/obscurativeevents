@@ -1,0 +1,357 @@
+/* ===== Custom Minecraft Font ===== */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('minecraft.ttf') format('truetype');
+}
+
+/* ===== Global Styles ===== */
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Minecraft', sans-serif;
+  overflow: hidden;
+}
+
+/* ===== Sticky Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 70px;
+  padding: 0 2rem;
+
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #b10000;
+  box-sizing: border-box;
+}
+
+header h1 {
+  color: #b10000;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  line-height: 70px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff0000;
+}
+
+/* ===== Sticky Footer ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #1a1a1a;
+  border-top: 2px solid #b10000;
+  color: #fff;
+}
+
+/* ===== Scroll Snap Container ===== */
+.sections-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* ===== Sections ===== */
+.snap-section {
+  min-height: calc(100vh - 110px); /* header + footer */
+  padding: 80px 20px 60px;
+
+  scroll-snap-align: start;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 1rem;
+}
+
+/* ===== Section Backgrounds ===== */
+.hero { background: linear-gradient(135deg, #000 0%, #1a0000 100%); }
+.about { background-color: #0a0a0a; }
+.events { background: linear-gradient(135deg, #1a0000 0%, #3a0000 100%); }
+.community { background-color: #000000; }
+.social { background: linear-gradient(135deg, #1a0000 0%, #000000 100%); }
+.partners { background-color: #0a0a0a; }
+
+/* ===== Section Titles & Text ===== */
+.snap-section h2 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.snap-section p {
+  font-size: 1.2rem;
+  color: #fff;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+/* Hero Section */
+.hero h2 { color: #b10000; font-size: 4rem; }
+.hero p { font-size: 1.5rem; }
+
+/* ===== Hero Section Background ===== */
+.hero {
+  /* Overlay a semi-transparent black layer over the banner */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('https://cdn.discordapp.com/discovery-splashes/1287998374888603690/e386cb2bf34c2aec12c645ea138db20b.jpg?size=512') 
+              no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ===== Horizontal Scrolling Containers ===== */
+.scrolling-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+}
+
+.scrolling-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrolling-container::-webkit-scrollbar-thumb {
+  background-color: #b10000;
+  border-radius: 3px;
+}
+
+.scrolling-container img {
+  height: 120px;
+  flex-shrink: 0;
+  border: 2px solid #b10000;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.scrolling-container img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  margin: 1rem 0.5rem;
+  background-color: #b10000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff0000;
+  transform: scale(1.05);
+}
+
+/* ===== Event Cards ===== */
+.event-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  background-color: #1a0000;
+  border: 2px solid #b10000;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #b10000;
+}
+
+.event-card h3 {
+  color: #ff0000;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.event-card p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.auto-scroll-wrapper {
+  width: 75%;
+  height: 400px; /* fixed smaller strip */
+  overflow: hidden;
+  margin: 1rem auto;
+  position: relative;
+}
+
+.auto-scroll-track {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  height: 100%;   /* fill wrapper */
+  transform: translateX(0); /* start position */
+}
+
+.auto-scroll-track img {
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 2px solid #b10000;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.auto-scroll-track img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Partner Logo ===== */
+.partner-logo {
+  max-width: 200px;
+  margin-top: 1rem;
+}
+
+/* ===== Discord Widget ===== */
+.discord-container {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+}
+
+.discord-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+/* ===== Social Media Widgets ===== */
+.social-widgets {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* stacks on smaller screens */
+}
+
+/* TikTok container */
+.tiktok-container {
+  width: 350px;
+  height: 500px;
+}
+
+.tiktok-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+/* YouTube card */
+.youtube-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 350px;
+  height: 500px;
+
+  background: linear-gradient(135deg, #1a0000, #000);
+  border: 2px solid #b10000;
+  border-radius: 12px;
+
+  text-decoration: none;
+  color: #fff;
+
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.youtube-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #b10000;
+}
+
+.yt-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+.yt-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #ff0000;
+}
+
+.yt-content p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.yt-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #b10000;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.yt-button:hover {
+  background-color: #ff0000;
+}
+
+/* ===== Smooth Scroll ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .event-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-widgets {
+    flex-direction: column; /* stack TikTok + YouTube on small screens */
+    align-items: center;
+  }
+
+  .tiktok-container,
+  .youtube-card,
+  .discord-container iframe {
+    width: 90%;
+    height: 500px;
+  }
+}
